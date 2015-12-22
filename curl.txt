@@ -1,0 +1,1 @@
+curl -v -X POST --data '{"messages":[{"name":"Francesquini","message":"Ola comprador"},{"name":"Francesquini","message":"Tudo bem"},{"name":"Martell","message":"Tudo e vc?"}]}' -H "Content-type: application/json"  http://localhost:3000/conversation

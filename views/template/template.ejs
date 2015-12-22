@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>EJS</title>
+</head>
+<body>
+	<% var abc = "teste" %>
+	<div class='element'>
+		<% include title %>
+		<%- abc %>
+	</div>
+	<script src='/assets/ejs.js'></script>
+	<script>
+		// var html = new EJS({url: 'template/title'}).update(document.getElementsByClassName('element')[0], {title: "olá mundo"});
+		var html = new EJS({url: 'template/title'}).render({title: "olá mundo"});
+		console.log(html);
+	</script>
+</body>
+</html>

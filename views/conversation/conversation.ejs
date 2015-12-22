@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>EJS - Conversa</title>
+</head>
+<body>
+  <ul id="messages">
+  <% for(var i=0; i<messages.length; i++) {%>
+    <% var message = messages[i] %>
+    <% include message %>
+  <% } %>
+  </ul>
+  <form id="form" action="#" method="post">
+    <textarea name="message" id="message" rows="8" cols="40"></textarea>
+    <input type="submit" value="Enviar">
+  </form>
+  <script src='/assets/async-define.js'></script>
+  <script async src='/assets/events-amd.js'></script>
+  <script async src='/assets/doc.js'></script>
+	<script async src='/assets/ejs.js'></script>
+	<script>
+    define(['doc'], function($){
+      $('#messages').on('newMessage', function(data){
+        var html = new EJS({url: 'message'}).render(data.detail);
+        var messages = $('#messages').html();
+        $('#messages').html(messages + html);
+        $('#message').val("");
+      });
+
+      $('#form').on('submit', function(e){
+        e.preventDefault();
+        //Aqui ficaria a chamada ajax e no success passariamos o response (json) para o trigger
+        $('#messages').trigger('newMessage', {message : {name: 'Francesquini',message: $('#message').val()}});
+      });
+    });
+	</script>
+</body>
+</html>
