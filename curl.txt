@@ -1,1 +1,1 @@
-curl -v -X POST --data '{"messages":[{"name":"Francesquini","message":"Ola comprador"},{"name":"Francesquini","message":"Tudo bem"},{"name":"Martell","message":"Tudo e vc?"}]}' -H "Content-type: application/json"  http://localhost:3000/conversation
+curl -v -X POST --data '{"messages":[{"usersInConversation": 3, "name":"Francesquini","message":"Ola comprador"},{"usersInConversation": 3, "name":"Francesquini","message":"Tudo bem"},{"usersInConversation": 3, "name":"Martell","message":"Tudo e vc?"}]}' -H "Content-type: application/json"  http://localhost:3000/conversation
