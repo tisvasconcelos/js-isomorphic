@@ -5,6 +5,11 @@
 	<title>EJS</title>
 </head>
 <body>
+	A: <%= __("words.Orders") %><br>
+	B: <%= __n("words.Users", 3) %><br>
+	C: <%= __n("words.Users", 1) %><br>
+	D: <%= __("words.Hello", "Teste") %>
+
 	<% var abc = "teste" %>
 	<div class='element'>
 		<% include title %>

@@ -5,6 +5,7 @@
 	<title>EJS - Conversa</title>
 </head>
 <body>
+	<%= __("words.Messages") %>
   <ul id="messages">
   <% for(var i=0; i<messages.length; i++) {%>
     <% var message = messages[i] %>
@@ -17,10 +18,15 @@
   </form>
   <script src='/assets/async-define.js'></script>
   <script async src='/assets/events-amd.js'></script>
-  <script async src='/assets/doc.js'></script>
-	<script async src='/assets/ejs.js'></script>
+	<script async src='/assets/components/qwest.min.js'></script>
+	<script async src='/assets/components/ajax.js'></script>
+	<script async src='/assets/components/i18n.js'></script>
+	<script async src='/assets/ejs/ejs.js'></script>
+	<script async src='/assets/ejs/view.js'></script>
+	<script async src='/assets/ejs/i18n.js'></script>
+	<script async src='/assets/doc.js'></script>
 	<script>
-    define(['doc'], function($){
+    define(['doc', 'ejs'], function($, ejs){
       $('#messages').on('newMessage', function(data){
         var html = new EJS({url: 'message'}).render(data.detail);
         var messages = $('#messages').html();
@@ -31,7 +37,7 @@
       $('#form').on('submit', function(e){
         e.preventDefault();
         //Aqui ficaria a chamada ajax e no success passariamos o response (json) para o trigger
-        $('#messages').trigger('newMessage', {message : {name: 'Francesquini',message: $('#message').val()}});
+        $('#messages').trigger('newMessage', {message : {usersInConversation: Math.floor((Math.random() * 10) + 1), name: 'Francesquini',message: $('#message').val()}});
       });
     });
 	</script>

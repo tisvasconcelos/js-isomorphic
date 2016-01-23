@@ -1,4 +1,5 @@
 <li>
-  <span><%= message.name %></span><br>
-  <%= message.message %>
+  <span><%= __("words.sentBy")%><%= message.name %></span><br><br>
+  <%= message.message %> (<%= __("words.Hello", "Teste") %>)<br>
+  <small><em><%= __n("words.Users", message.usersInConversation)%></em></small><br><br>
 </li>

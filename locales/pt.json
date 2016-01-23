@@ -1,0 +1,15 @@
+{
+	"words": {
+		"sentBy": "enviado por: ",
+		"Orders": "Pedidos",
+		"Messages": "Mensagens",
+		"Users": {
+			"zero": "%s Usuários",
+			"one": "%s Usuário",
+			"other": "%s Usuários"
+		},
+		"Hello": "Olá %s"
+	},
+	"sentBy": "sentBy",
+	"[object Arguments]": "[object Arguments]"
+}
